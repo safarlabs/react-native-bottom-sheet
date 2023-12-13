@@ -43,6 +43,7 @@ export function createBottomSheetScrollableComponent<T, P>(
       onScrollBeginDrag,
       onScrollEndDrag,
       onContentSizeChange,
+      waitFor,
       ...rest
     }: any = props;
 
@@ -116,7 +117,7 @@ export function createBottomSheetScrollableComponent<T, P>(
 
     //#region effects
     // @ts-ignore
-    useImperativeHandle(ref, () => scrollableRef.current);
+    useImperativeHandle(ref, () => nativeGestureRef.current);
     useScrollableSetter(
       scrollableRef,
       type,
@@ -133,6 +134,7 @@ export function createBottomSheetScrollableComponent<T, P>(
           ref={nativeGestureRef}
           enabled={enableContentPanningGesture}
           shouldCancelWhenOutside={false}
+          waitFor={waitFor}
         >
           <ScrollableComponent
             animatedProps={scrollableAnimatedProps}
@@ -180,6 +182,7 @@ export function createBottomSheetScrollableComponent<T, P>(
           ref={nativeGestureRef}
           enabled={enableContentPanningGesture}
           shouldCancelWhenOutside={false}
+          waitFor={waitFor}
         >
           <ScrollableComponent
             animatedProps={scrollableAnimatedProps}

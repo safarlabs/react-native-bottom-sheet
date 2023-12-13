@@ -18,6 +18,7 @@ import type {
 } from 'react-native';
 import type Animated from 'react-native-reanimated';
 import type { ScrollEventsHandlersHookType } from '../../types';
+import { NativeViewGestureHandlerProps } from 'react-native-gesture-handler';
 
 export interface BottomSheetScrollableProps {
   /**
@@ -139,6 +140,7 @@ export type BottomSheetScrollViewProps = Omit<
 > &
   BottomSheetScrollableProps & {
     ref?: Ref<BottomSheetScrollViewMethods>;
+    waitFor: NativeViewGestureHandlerProps['waitFor'];
     children: ReactNode | ReactNode[];
   };
 

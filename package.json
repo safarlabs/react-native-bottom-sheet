@@ -1,6 +1,6 @@
 {
-  "name": "@gorhom/bottom-sheet",
-  "version": "4.5.1",
+  "name": "@safarlabs/bottom-sheet",
+  "version": "4.5.4",
   "description": "A performant interactive bottom sheet with fully configurable options 🚀",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -20,7 +20,10 @@
     "reanimated",
     "sheet"
   ],
-  "repository": "https://github.com/gorhom/react-native-bottom-sheet",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": "https://github.com/safarlabs/react-native-bottom-sheet",
   "author": "Mo Gorhom (https://gorhom.dev)",
   "license": "MIT",
   "bugs": {
