@@ -40,8 +40,6 @@ export function createBottomSheetScrollableComponent<T, P>(
       refreshControl,
       // events
       onScroll,
-      onScrollBeginDrag,
-      onScrollEndDrag,
       onContentSizeChange,
       waitFor,
       ...rest
@@ -54,12 +52,7 @@ export function createBottomSheetScrollableComponent<T, P>(
 
     //#region hooks
     const { scrollableRef, scrollableContentOffsetY, scrollHandler } =
-      useScrollHandler(
-        scrollEventsHandlersHook,
-        onScroll,
-        onScrollBeginDrag,
-        onScrollEndDrag
-      );
+      useScrollHandler(scrollEventsHandlersHook, onScroll);
     const {
       enableContentPanningGesture,
       animatedFooterHeight,
@@ -115,9 +108,12 @@ export function createBottomSheetScrollableComponent<T, P>(
     }, [enableFooterMarginAdjustment, style, containerAnimatedStyle]);
     //#endregion
 
-    //#region effects
     // @ts-ignore
-    useImperativeHandle(ref, () => nativeGestureRef.current);
+    const { scrollRef, gestureRef } = ref;
+
+    //#region effects
+    useImperativeHandle(scrollRef, () => scrollableRef.current);
+    useImperativeHandle(gestureRef, () => nativeGestureRef.current);
     useScrollableSetter(
       scrollableRef,
       type,
