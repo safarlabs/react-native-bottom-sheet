@@ -322,6 +322,7 @@ export const useGestureEventsHandlersDefault: GestureEventsHandlersHookType =
            * calculate the destination point, using redash.
            */
           const destinationPoint = snapPoint(
+            context.initialPosition,
             translationY + context.initialPosition,
             velocityY,
             snapPoints
