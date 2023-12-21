@@ -108,12 +108,9 @@ export function createBottomSheetScrollableComponent<T, P>(
     }, [enableFooterMarginAdjustment, style, containerAnimatedStyle]);
     //#endregion
 
-    // @ts-ignore
-    const { scrollRef, gestureRef } = ref;
-
     //#region effects
-    useImperativeHandle(scrollRef, () => scrollableRef.current);
-    useImperativeHandle(gestureRef, () => nativeGestureRef.current);
+    // @ts-ignore
+    useImperativeHandle(ref, () => scrollableRef.current);
     useScrollableSetter(
       scrollableRef,
       type,
