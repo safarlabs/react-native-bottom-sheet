@@ -1,6 +1,6 @@
 {
   "name": "@safarlabs/bottom-sheet",
-  "version": "4.5.13",
+  "version": "4.5.14",
   "description": "A performant interactive bottom sheet with fully configurable options 🚀",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

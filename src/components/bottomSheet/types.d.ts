@@ -245,7 +245,7 @@ export interface BottomSheetProps
    * Animated value to be used as a callback of the position node internally.
    * @type SharedValue<number>
    */
-  animatedPosition?: SharedValue<number>;
+  animatedPosition: SharedValue<number>;
   /**
    * Animated value to be used as a callback for the position index node internally.
    * @type SharedValue<number>

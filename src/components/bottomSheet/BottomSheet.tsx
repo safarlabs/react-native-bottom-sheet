@@ -215,7 +215,7 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
     const animatedCurrentIndex = useReactiveSharedValue(
       animateOnMount ? -1 : _providedIndex
     );
-    const animatedPosition = useSharedValue(INITIAL_POSITION);
+    const animatedPosition = _providedAnimatedPosition;
     const animatedNextPosition = useSharedValue(INITIAL_VALUE);
     const animatedNextPositionIndex = useSharedValue(0);
 
@@ -1466,17 +1466,17 @@ const BottomSheetComponent = forwardRef<BottomSheet, BottomSheetProps>(
       ]
     );
 
-    /**
-     * sets provided animated position
-     */
-    useAnimatedReaction(
-      () => animatedPosition.value,
-      _animatedPosition => {
-        if (_providedAnimatedPosition) {
-          _providedAnimatedPosition.value = _animatedPosition + topInset;
-        }
-      }
-    );
+    // /**
+    //  * sets provided animated position
+    //  */
+    // useAnimatedReaction(
+    //   () => animatedPosition.value,
+    //   _animatedPosition => {
+    //     if (_providedAnimatedPosition) {
+    //       _providedAnimatedPosition.value = _animatedPosition + topInset;
+    //     }
+    //   }
+    // );
 
     /**
      * sets provided animated index
