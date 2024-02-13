@@ -62,6 +62,7 @@ export type BottomSheetFlatListProps<T> = Omit<
 > &
   BottomSheetScrollableProps & {
     ref?: Ref<BottomSheetFlatListMethods>;
+    waitFor: NativeViewGestureHandlerProps['waitFor'];
   };
 
 export interface BottomSheetFlatListMethods {
